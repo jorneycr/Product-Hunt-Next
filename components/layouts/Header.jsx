@@ -26,6 +26,7 @@ const Logo = styled.p`
     font-family: 'Roboto Slab', serif;
     margin-right: 2rem;
 `;
+
 const BordeHeader = styled.p`
 border-bottom: 2px solid var(--gris3);
 padding: 1rem 0;

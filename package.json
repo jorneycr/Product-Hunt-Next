@@ -1,5 +1,5 @@
 {
-  "name": "producthuntnext",
+  "name": "product_hunt_next",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,16 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/babel-preset-css-prop": "^11.2.0",
+    "@emotion/babel-preset-css-prop": "^11.10.0",
     "@emotion/core": "^11.0.0",
-    "@emotion/styled": "^11.3.0",
+    "@emotion/styled": "^11.10.5",
+    "@next/font": "13.1.0",
     "babel-plugin-emotion": "^11.0.0",
-    "next": "11.0.1",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
-  },
-  "devDependencies": {
-    "eslint": "7.30.0",
-    "eslint-config-next": "11.0.1"
+    "next": "13.1.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-socks": "^2.2.0"
   }
 }

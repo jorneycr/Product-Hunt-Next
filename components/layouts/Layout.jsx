@@ -7,7 +7,6 @@ import Head from 'next/head';
 
 const Layout = props => {
     return (
-        // esto es lo mismo que el Fragment
         <>
             <Global 
                 styles={css`
