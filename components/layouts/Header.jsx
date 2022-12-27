@@ -1,4 +1,4 @@
-  
+
 import React from 'react';
 import Link from 'next/link';
 import styled from '@emotion/styled';
@@ -38,63 +38,63 @@ const Header = () => {
 
     const usuario = false;
     return (
-            <header
-                css={css`
+        <header
+            css={css`
                 border-bottom: 2px solid var(--gris3);
                 padding: 1rem 0;
                 `}
-            >
+        >
 
-                <ContenedorHeader>
-                    <div
-                         css={css`
+            <ContenedorHeader>
+                <div
+                    css={css`
                          display:flex;
                          align-items: center;
                          `}
-                    >
-                        <Link href="/">
-                            <Logo>P</Logo>
-                        </Link>
+                >
+                    <Link href="/">
+                        <Logo>P</Logo>
+                    </Link>
 
-                        {/*Buscar aqui*/}
-                        <Buscar />
+                    {/*Buscar aqui*/}
+                    <Buscar />
 
-                        {/*Nav aqui*/}
-                        <Navegacion />
-                    </div>
-                    <div
-                        css={css`
+                    {/*Nav aqui*/}
+                    <Navegacion />
+                </div>
+                <div
+                    css={css`
                         display: flex;
                         align-items: center;
                     `}
-                    >
-                        {usuario ? (
-                            <>
-                                <p
-                                    css={css`
+                >
+                    {usuario ? (
+                        <>
+                            <p
+                                css={css`
                             margin-right:2rem;
                         `}
-                                >Hola: Jorney</p>
+                            >Hola: Jorney</p>
 
-                                <Boton bgColor="true">Cerrar Sesion</Boton>
+                            <Boton bgColor="true">Cerrar Sesion</Boton>
 
 
-                            </>
-                        ) : (
-                            <>
-                                <Link href="/login">
-                                    <Boton
-                                        bgColor="true"
-                                    >Login</Boton>
-                                </Link>
-                                <Link href="/crear-cuenta">
-                                    <Boton>Crear Cuenta</Boton>
-                                </Link>
-                            </>
-                        )}
-                    </div>
-                </ContenedorHeader>
-            </header>
+                        </>
+                    ) : (
+                        <>
+                            <Link href="/login">
+                                <Boton
+                                    bgColor="true"
+                                >Login</Boton>
+                            </Link>
+                            <Link href="/crear-cuenta">
+                                <Boton>Crear Cuenta</Boton>
+                            </Link>
+                        </>
+                    )}
+                </div>
+            </ContenedorHeader>
+        </header>
     );
 }
 

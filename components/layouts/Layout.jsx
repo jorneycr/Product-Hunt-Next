@@ -8,7 +8,7 @@ import Head from 'next/head';
 const Layout = props => {
     return (
         <>
-            <Global 
+            <Global
                 styles={css`
                     :root {
                         --gris: #3d3d3d;
