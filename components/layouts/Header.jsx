@@ -2,7 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 import styled from '@emotion/styled';
-import { css,jsx } from '@emotion/react'
+import { css, jsx } from '@emotion/react'
 import Buscar from '../ui/Buscar';
 import Navegacion from './Navegacion';
 import Boton from '../ui/Boton';
