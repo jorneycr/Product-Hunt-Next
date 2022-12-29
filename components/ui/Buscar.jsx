@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { css,jsx } from '@emotion/react'
+import { css, jsx } from '@emotion/react'
 
 const InputText = styled.input`
     border: 1px solid var(--gris3);
@@ -33,8 +33,8 @@ const Buscar = () => {
             `}
         >
             <InputText 
-            type="text"
-            placeholder="Buscar Productos"
+                type="text"
+                placeholder="Buscar Productos"
             />
             <InputSubmit type="submit">Buscar</InputSubmit>
         </form>

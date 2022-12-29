@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 
 const Nav = styled.nav`
     padding-left: 2rem;
+    
     a {
         font-size: 1.8rem;
         margin-left: 2rem;
