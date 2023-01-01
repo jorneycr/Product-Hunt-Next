@@ -9,7 +9,7 @@ const Boton = styled.a`
     text-align: center;
     background-color: ${props => props.bgColor ? '#DA552F' : 'white'};
     color: ${props => props.bgColor ? 'white' : '#000'};
-    &:first-of-type {
+    &:last-of-type {
         margin-right:0;
     }
     &:hover {
