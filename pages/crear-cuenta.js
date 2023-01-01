@@ -21,7 +21,6 @@ const CrearCuenta = () => {
   const {
     valores,
     errores,
-    submitForm,
     handleBlur,
     handleSubmit,
     handleChange,
