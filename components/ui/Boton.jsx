@@ -9,8 +9,8 @@ const Boton = styled.a`
     text-align: center;
     background-color: ${props => props.bgColor ? '#DA552F' : 'white'};
     color: ${props => props.bgColor ? 'white' : '#000'};
-    &:first-of-type {
-        margin-right:0;
+    &:last-of-type {
+        margin-left: 1rem;
     }
     &:hover {
         cursor: pointer;
