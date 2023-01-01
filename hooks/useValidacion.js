@@ -14,7 +14,7 @@ const useValidacion = (stateInicial, validar, fn) => {
       }
       guardarSubmitForm(false);
     }
-  }, []);
+  }, [errores]);
 
   const handleChange = (e) => {
     guardarValores({
