@@ -1,7 +1,12 @@
 import React from "react";
 import { css } from "@emotion/react";
 import Layout from "../components/layouts/Layout";
-import { Formulario, Campo, InputSubmit } from "../components/ui/Formulario";
+import {
+  Formulario,
+  Campo,
+  InputSubmit,
+  Error,
+} from "../components/ui/Formulario";
 
 import useValidacion from "../hooks/useValidacion";
 import validarCrearCuenta from "../validacion/validarCrearCuenta";
@@ -13,8 +18,14 @@ const STATE_INICIAL = {
 };
 
 const CrearCuenta = () => {
-  const { valores, errores, submitForm, handleSubmit, handleChange } =
-    useValidacion(STATE_INICIAL, validarCrearCuenta, crearCuenta);
+  const {
+    valores,
+    errores,
+    submitForm,
+    handleBlur,
+    handleSubmit,
+    handleChange,
+  } = useValidacion(STATE_INICIAL, validarCrearCuenta, crearCuenta);
 
   const { nombre, email, password } = valores;
   const crearCuenta = () => {};
@@ -40,8 +51,10 @@ const CrearCuenta = () => {
               name="nombre"
               value={nombre}
               onChange={handleChange}
+              onBlur={handleBlur}
             />
           </Campo>
+          {errores.nombre && <Error> {errores.nombre}</Error>}
           <Campo>
             <label htmlFor="email">Email</label>
             <input
@@ -51,8 +64,10 @@ const CrearCuenta = () => {
               name="email"
               value={email}
               onChange={handleChange}
+              onBlur={handleBlur}
             />
           </Campo>
+          {errores.email && <Error> {errores.email}</Error>}
           <Campo>
             <label htmlFor="password">Password</label>
             <input
@@ -62,8 +77,11 @@ const CrearCuenta = () => {
               name="password"
               value={password}
               onChange={handleChange}
+              onBlur={handleBlur}
             />
           </Campo>
+          {errores.password && <Error> {errores.password}</Error>}
+
           <InputSubmit type="submit" value="Crear Cuenta" />
         </Formulario>
       </>

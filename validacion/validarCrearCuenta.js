@@ -3,6 +3,8 @@ export default function validarCrearCuenta(valores) {
 
   if (!valores.nombre) {
     errores.nombre = "El nombre es obligatorio";
+  }else if(valores.nombre.length < 3){
+    errores.nombre = "El nombre debe ser al menos de 3 caracteres";
   }
 
   if (!valores.email) {
