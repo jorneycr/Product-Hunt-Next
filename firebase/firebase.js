@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import {
   createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
   getAuth,
   updateProfile,
 } from "firebase/auth";
@@ -22,6 +23,15 @@ class Firebase {
     return await updateProfile(nuevoUsuario.user, {
       displayName: nombre,
     });
+  }
+
+  async login(email, password) {
+    const account = await signInWithEmailAndPassword(
+      this.auth,
+      email,
+      password
+    );
+    return !account;
   }
 }
 

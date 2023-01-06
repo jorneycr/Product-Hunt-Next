@@ -23,12 +23,18 @@ const Login = () => {
   const [error, guardarError] = useState(false);
 
   const { valores, errores, handleSubmit, handleChange, handleBlur } =
-    useValidacion(STATE_INICIAL, iniciarSesion, crearCuenta);
+    useValidacion(STATE_INICIAL, validarIniciarSesion, iniciarSesion);
 
   const { email, password } = valores;
 
-  function iniciarSesion(){
-
+  async function iniciarSesion() {
+    try {
+      await firebase.login(email, password);
+      Router.push("/");
+    } catch (error) {
+      console.error("Hubo un error al autenticar al usuario ", error.message);
+      guardarError(error.message);
+    }
   }
 
   return (
@@ -44,7 +50,6 @@ const Login = () => {
             Iniciar Sesion
           </h1>
           <Formulario onSubmit={handleSubmit} noValidate>
-
             <Campo>
               <label htmlFor="email">Email</label>
               <input
