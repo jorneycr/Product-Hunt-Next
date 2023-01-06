@@ -5,7 +5,6 @@ import useAutenticacion from "../hooks/useAutenticacion";
 
 export default function App({ Component, pageProps }) {
   const usuario = useAutenticacion();
-  console.log( usuario);
   const [showChild, setShowChild] = useState(false);
 
   useEffect(() => {
@@ -19,6 +18,7 @@ export default function App({ Component, pageProps }) {
     <FirebaseContext.Provider
       value={{
         firebase,
+        usuario,
       }}
     >
       <BreakpointProvider>

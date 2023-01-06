@@ -2,6 +2,7 @@ import { initializeApp } from "firebase/app";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signOut,
   getAuth,
   updateProfile,
 } from "firebase/auth";
@@ -32,6 +33,10 @@ class Firebase {
       password
     );
     return !account;
+  }
+
+  async cerrarSeccion() {
+    await signOut(this.auth);
   }
 }
 
