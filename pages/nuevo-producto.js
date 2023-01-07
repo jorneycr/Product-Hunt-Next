@@ -130,13 +130,13 @@ const NuevoProducto = () => {
                     id="nombre"
                     placeholder="Nombre del Producto"
                     name="nombre"
-                    // value={nombre}
-                    // onChange={handleChange}
-                    // onBlur={handleBlur}
+                    value={nombre}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
                   />
                 </Campo>
 
-                {/* {errores.nombre && <Error>{errores.nombre}</Error> } */}
+                {errores.nombre && <Error>{errores.nombre}</Error> }
 
                 <Campo>
                   <label htmlFor="empresa">Empresa</label>
@@ -145,13 +145,13 @@ const NuevoProducto = () => {
                     id="empresa"
                     placeholder="Nombre Empresa o Compañia"
                     name="empresa"
-                    // value={empresa}
-                    // onChange={handleChange}
-                    // onBlur={handleBlur}
+                    value={empresa}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
                   />
                 </Campo>
 
-                {/* {errores.empresa && <Error>{errores.empresa}</Error> } */}
+                {errores.empresa && <Error>{errores.empresa}</Error> }
 
                 <Campo>
                   <label htmlFor="imagen">Imagen</label>
@@ -174,13 +174,13 @@ const NuevoProducto = () => {
                     id="url"
                     name="url"
                     placeholder="URL de tu producto"
-                    // value={url}
-                    // onChange={handleChange}
-                    // onBlur={handleBlur}
+                    value={url}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
                   />
                 </Campo>
 
-                {/* {errores.url && <Error>{errores.url}</Error> } */}
+                {errores.url && <Error>{errores.url}</Error> }
               </fieldset>
 
               <fieldset>
@@ -191,16 +191,16 @@ const NuevoProducto = () => {
                   <textarea
                     id="descripcion"
                     name="descripcion"
-                    // value={descripcion}
-                    // onChange={handleChange}
-                    // onBlur={handleBlur}
+                    value={descripcion}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
                   />
                 </Campo>
 
-                {/* {errores.descripcion && <Error>{errores.descripcion}</Error> } */}
+                {errores.descripcion && <Error>{errores.descripcion}</Error> }
               </fieldset>
 
-              {/* {error && <Error>{error} </Error>} */}
+              {error && <Error>{error} </Error>}
 
               <InputSubmit type="submit" value="Crear Producto" />
             </Formulario>
