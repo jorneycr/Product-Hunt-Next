@@ -6,13 +6,15 @@ import {
   getAuth,
   updateProfile,
 } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 import firebaseConfig from "./config";
 
 class Firebase {
   constructor() {
-    initializeApp(firebaseConfig);
+    const app = initializeApp(firebaseConfig);
     this.auth = getAuth();
+    this.db = getFirestore(app);
   }
 
   async registrar(nombre, email, password) {

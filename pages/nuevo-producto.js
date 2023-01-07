@@ -11,6 +11,7 @@ import {
 } from "../components/ui/Formulario";
 
 import { FirebaseContext } from "../firebase";
+import { collection, addDoc } from "firebase/firestore";
 
 import Error404 from "../components/layouts/404";
 
@@ -70,9 +71,12 @@ const NuevoProducto = () => {
     };
 
     // insertarlo en la base de datos
-    firebase.db.collection("productos").add(producto);
-
-    return router.push("/");
+    try {
+      await addDoc(collection(firebase.db, "productos"), producto);
+      return router.push("/");
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   const handleUploadStart = () => {
@@ -116,10 +120,7 @@ const NuevoProducto = () => {
             >
               Nuevo Producto
             </h1>
-            <Formulario
-            // onSubmit={handleSubmit}
-            // noValidate
-            >
+            <Formulario onSubmit={handleSubmit} noValidate>
               <fieldset>
                 <legend>Información General </legend>
 
@@ -136,7 +137,7 @@ const NuevoProducto = () => {
                   />
                 </Campo>
 
-                {errores.nombre && <Error>{errores.nombre}</Error> }
+                {errores.nombre && <Error>{errores.nombre}</Error>}
 
                 <Campo>
                   <label htmlFor="empresa">Empresa</label>
@@ -151,7 +152,7 @@ const NuevoProducto = () => {
                   />
                 </Campo>
 
-                {errores.empresa && <Error>{errores.empresa}</Error> }
+                {errores.empresa && <Error>{errores.empresa}</Error>}
 
                 <Campo>
                   <label htmlFor="imagen">Imagen</label>
@@ -180,7 +181,7 @@ const NuevoProducto = () => {
                   />
                 </Campo>
 
-                {errores.url && <Error>{errores.url}</Error> }
+                {errores.url && <Error>{errores.url}</Error>}
               </fieldset>
 
               <fieldset>
@@ -197,7 +198,7 @@ const NuevoProducto = () => {
                   />
                 </Campo>
 
-                {errores.descripcion && <Error>{errores.descripcion}</Error> }
+                {errores.descripcion && <Error>{errores.descripcion}</Error>}
               </fieldset>
 
               {error && <Error>{error} </Error>}
