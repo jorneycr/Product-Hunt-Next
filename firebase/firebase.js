@@ -6,7 +6,7 @@ import {
   getAuth,
   updateProfile,
 } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import { getFirestore, getStorage } from "firebase/firestore";
 
 import firebaseConfig from "./config";
 
